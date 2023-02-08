@@ -1,1 +1,0 @@
-# web-2023-Feb-06-west-samples
