@@ -5,73 +5,34 @@
 - [x] TCP introduction
 - [x] TCP demo (chat server)
 
-### Networking
-* computers connected and talking to each other
-* any computer on the network can talk to any other comp on the network
-* routing computers
-* servers (hosting websites)
+### What is networking?
+- Communication between machines on a network
 
-### Internet Protocol (IP)
-* provides a unique address for each computer (street address)
-* identify the running process on the other computer through the port (apt number)
-* 65,535 ports to choose from
-  * 80 HTTP
-  * 5000 
-  * 8080 HTTP
-  * 53 DNS
-  * 20 && 21 FTP
-  * 22 SSH
-  * 3000 - 8000 dev ports
+### What is a protocol?
+- A defined standard for how requests and responses are sent between network devices
 
-* IPv4 192.168.2.2 127.0.0.1
+### TCP/IP Model
+1. **Network Access** - physical devices and how they connect to the network
+2. **Internetwork** - communication between devices on the network
+3. **Transport** - splits up the network communication into ports
+4. **Application** - clients and servers/applications and services/sessions and encryption
 
-### TCP
-* Transport Control Protocol
-* breaks all communication down into packets
-* establish a connection - 3 way handshake
-* lost packets get resent
-* assembled in correct order by the recipient
+### Transport Layer Protocols
+- Break data into packets to be sent over the network layer
+- Give each packet a header with origin and destination
+- **UDP**: **U**ser **D**atagram **P**rotocol
+  - Smaller header size (8 bytes) which results in smaller packet sizes
+  - _Connectionless_ ie. there is no need to establish or maintain a connection
+  - No error recovery (any corrupted packets are discarded)
+  - Packets can arrive in any order
+  - Useful for streaming/low latency applications
+- **TCP**: **T**ransportation **C**ontrol **P**rotocol
+  - Larger header size (20 bytes)
+  - Requires a connection (3-way handshake)
+  - Corrupted packets are reported to the server and are re-sent
+  - Packets arrive in order
+  - Useful when guaranteed communication is needed
 
-### UDP
-* User Datagram Protocol
-* has no need for a connection
-* lost packets are not resent
-
-
-client <======> server
-
-
-### Event-driven programming
-* register callbacks to run when an event occurs
-
-```js
-object.on('nameOfEvent', (objectThatRepresentsEvent) => {})
-button.on('click', (clickObject) => {});
-form.on('submit', () => {});
-```
-
-
-API - Application Programming Interface
-abstraction layer
-
-```js
-setTimeout(() => {}, 3000)
-
-const myFuncThatHidesComplexity = () => {
-  // do some complex stuff
-};
-```
-
-### Encoding
-* everything is stored as a number
-* which number represents which letter/character
-* ascii
-
-
-
- stdin.setRawMode(true); // don't wait for enter, run on every keystroke
-
-conn.write("Name: ABC")
-conn.write("win the game!")
-
-
+### Useful Links
+* [OSI Model](https://en.wikipedia.org/wiki/OSI_model)
+* [Net package documentation](https://nodejs.org/api/net.html)
