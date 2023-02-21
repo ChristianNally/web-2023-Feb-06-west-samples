@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Exercise</title>
+</head>
+<body>
+  <h1>Edit Exercise</h1>
+  <form method="POST" action="/edit">
+
+    <label for="name-id">Name:</label>
+    <input id="name-id" name="displayname" type="text" value="<%= name %>" disabled/>
+
+    <label for="reps-id">Reps:</label>
+    <input id="reps-id" name="reps" type="text" value="<%= reps %>"/>
+
+    <input type="hidden" name="name" value="<%= name %>"/>
+
+    <button>Edit</button>
+  </form>
+</body>
+</html>
