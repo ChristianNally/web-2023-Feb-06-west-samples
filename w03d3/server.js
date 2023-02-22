@@ -104,7 +104,39 @@ app.post('/logout', (req, res) => {
   res.redirect('/login');
 });
 
+// GET /register (added after lecture as an example)
+app.get('/register', (req, res) => {
+  res.render('register');
+});
 
+// POST /register (added after lecture as an example)
+app.post('/register', (req, res) => {
+  // grab the username and password from the request body
+  const username = req.body.username;
+  const password = req.body.password;
+
+  // return an error if a username and/or password was NOT provided
+  if (!username || !password) {
+    return res.status(400).send('please provide a username AND password');
+  }
+
+  // create a random id
+  const userId = Math.random().toString(36).substring(2, 5);
+
+  // create the new user object
+  const user = {
+    id: userId,
+    username: username,
+    password: password
+  };
+
+  // add the new user object to our `users` object
+  users[userId] = user;
+  // console.log(users);
+
+  // send the user to the login page to try out their new credentials
+  res.redirect('/login');
+});
 
 // GET /home
 app.get('/home', (req, res) => {
