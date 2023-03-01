@@ -3,9 +3,10 @@
 ### To Do
 - [ ] AJAX
 - [ ] XMLHttpRequest (XHR) Object
-- [ ] Use AJAX to retrieve data from a remote server
+- [ ] Build a simple Express server to serve our app
+- [ ] Use AJAX to retrieve data from our server
 - [ ] Use jQuery to update the DOM with the retrieved data
-- [ ] Use AJAX to submit data to a remote server
+- [ ] Use AJAX to submit data to our server
 - [ ] All without refreshing the browser
 
 
