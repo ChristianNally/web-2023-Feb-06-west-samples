@@ -10,56 +10,49 @@
 - [x] All without refreshing the browser
 
 ### AJAX
-* Asynchronous Javascript and XML AJAJ
-* JS is making HTTP requests (not the browser)
-* XHR object XML HTTP Request object
+* **A**synchronous **J**avaScript **A**nd **X**ML
+* Invented by Microsoft for Outlook Web Access as a way of replicating desktop application functionality in the browser
+* Thanks to AJAX, web applications can send and receive data asynchronously without requiring a browser refresh
+* The widespread use of AJAX was one of the factors that led to Web 2.0
+* Originally retrieved data sent using `XML`, but modern applications use `JSON` instead
 
-* encoding information
-* eXtensible Markup Language (XML) XHTML is a string
+### XMLHttpRequest Object
+* AJAX is implemented using the `XMLHttpRequest` (`XHR`) object
+* Modern libraries (such as `jQuery` or `axios`) provide us with easy-to-use wrappers for the `XHR` object
 
-```xml
-<user>
-  <username>alice</username>
-  <password>1234</password>
-</user>
-```
-
-```json
-{
-  "username": "alice",
-  "password": "1234"
-}
-```
+### jQuery AJAX
+* jQuery gives us an API for making AJAX requests
 
 ```js
 $.ajax({
+  url: 'https://jsonplaceholder.typicode.com/posts',
   method: 'GET',
-  url: '/tweets',
   dataType: 'json',
-  success: (responseData) => { createTweetElement(responseData) },
-  error: (err) => {}
-})
+  success: (data) => {
+    console.log('this request succeeded and here\'s the data', data);
+  },
+  error: (error) => {
+    console.log('this request failed and this was the error', error);
+  }
+});
 ```
-XSS cross-site scripting
-name=chocolate%20cake&calories=1000
-http://localhost:4000/?name=choco+cake&calories=1000
+
+### jQuery Shorthand Methods
+* jQuery has several shorthand methods so that we don't have to use the full `.ajax` method every time
 
 ```js
-$('h2') // search the dom for h2's
-const $h2 = $('<h2>') // create an h2
-$h2.text("console.log('hello')"); // <h2>hello world</h2>
-$h2.addClass('greeting'); // <h2 class="greeting">hello world</h2>
+// make a get request to the specified endpoint
+$.get('https://jsonplaceholder.typicode.com/posts');
 
-.text('hello'); // return `this`
-$('<div>').text('hello').addClass('fancy-css')
+// make a get request for JSON data
+$.getJSON('https://jsonplaceholder.typicode.com/posts');
 
-$(`<h2 class="greeting">${console.log('hello')}</h2>`); // <h2 class="greeting">hello world</h2>
+// make a post request
+$.post('https://jsonplaceholder.typicode.com/posts', { /* form data */ });
 ```
 
-
-
-
-
-
-
-
+### Useful Links
+* [Blog post coining AJAX](https://web.archive.org/web/20160305044414/http://adaptivepath.org/ideas/ajax-new-approach-web-applications/)
+* [Wikipedia: AJAX](https://en.wikipedia.org/wiki/Ajax_(programming))
+* [MDN: XMLHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+* jQuery [AJAX](http://api.jquery.com/jquery.ajax/), [getJSON](https://api.jquery.com/jquery.getjson/), and [post](https://api.jquery.com/jquery.post/) methods
