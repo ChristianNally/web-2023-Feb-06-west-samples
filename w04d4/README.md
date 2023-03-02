@@ -6,7 +6,7 @@
 - [x] Percentages
 - [x] `max-width` and `min-width`
 - [x] Viewport Height/Width `vh`/`vw`
-- [x] Based on Font-size `em`/`rem` emphemeral units M
+- [x] Based on Font-size `em`/`rem` ephemeral units M
 - [x] Media Queries
 - [x] CSS Preprocessors
 - [x] Intro to Sass/SCSS
