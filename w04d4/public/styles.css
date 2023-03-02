@@ -26,7 +26,6 @@ section {
 }
 
 section div {
-  /* width: 50px; */
   /* height: auto; */
   /* height: 150px; */
   /* height: 10em; */
@@ -34,12 +33,12 @@ section div {
   /* height: 50%; */
   height: 20vh;
   /* max-height: 250px; */
+  /* width: 50px; */
   /* width: 150px; */
   /* width: 30rem; */
   width: 10vw;
   /* min-width: 200px;
   max-width: 350px; */
-  /* width: 150px; */
   margin: 20px;
   line-height: 150px;
   display: inline-block;
