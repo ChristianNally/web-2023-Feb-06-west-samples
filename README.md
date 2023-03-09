@@ -8,3 +8,5 @@
 * [W03D03 - HTTP Cookies & User Authentication](/w03d3)
 * [W04D03 - AJAX](/w04d3)
 * [W04D04 - Responsive Design and SASS](/w04d4)
+* [W05D05 - Mid-term Project Kickoff](/w05d5)
+* [BREAKOUT - Express Router](/breakout-express-router)
