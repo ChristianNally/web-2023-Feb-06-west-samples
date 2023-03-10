@@ -69,3 +69,5 @@ app.use('/my-routes', myRouterFn(dbConnection));
 
 ### Useful Links
 * [Express Router docs](https://expressjs.com/en/4x/api.html#router)
+
+/products => /api/admin/products
