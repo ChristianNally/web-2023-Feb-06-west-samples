@@ -1,6 +1,9 @@
 const pg = require('pg');
 const Client = pg.Client;
 
+// Pool load-balancing
+// Client individual
+
 const config = {
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
