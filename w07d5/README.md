@@ -8,41 +8,31 @@
 - [ ] `useRequest`
 - [x] `useKeyPress`
 
-### Custom Hook
-* helper function that use hooks internally
-
-
-
-const user = {
-  username
-};
-
-useVisualMode
-history: ['EMPTY', 'CREATE', 'SAVING', 'SHOW']
-history: ['EMPTY', 'CREATE']
-transition => move forward through time
-back => move back through time
-
-history.push('SAVING')
-const newArr = [...history, 'SAVING']
-newArr.push('SAVING');
-setHistory(newArr);
-
+### Custom Hooks
+- From the [React Docs](https://reactjs.org/docs/hooks-custom.html):
+> Building your own Hooks lets you extract component logic into reusable functions.
+- We can pull repetitive or complex code out of our components and move it into _custom hooks_
+- _Custom hooks_ are just JavaScript functions that can use React hooks
+- They must start with the prefix `use` so that React knows they are hooks
+- Multiple components using the same custom hook **do not share state**
 
 ```js
-const [count] = useState(0);
+// simple custom hook
+const useDocumentTitle = (title) => {
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
+};
 
-setCount(count + 1); // 1
-setCount((latestAndGreatest) => { return latestAndGreatest + 1 }); // 2
-setCount((prev) => prev + 1); // 3
-setCount(0 + 1); // 1
+// inside of a component
+useDocumentTitle('My New Title');
 ```
 
+### Custom Hook Examples
+- [Browser Dimensions](https://codesandbox.io/s/custom-hooks-exercise-browser-dimensions-d5tv7)
+- [Mouse Position](https://codesandbox.io/s/eloquent-allen-dxfns?fontsize=14)
 
-
-
-
-
-
-
-
+### Useful Links
+- [React Docs: Custom Hooks](https://reactjs.org/docs/hooks-custom.html)
+- [Easy to Understand Hook Recipes](https://usehooks.com/)
+- [![awesome](https://camo.githubusercontent.com/1997c7e760b163a61aba3a2c98f21be8c524be29/68747470733a2f2f617765736f6d652e72652f62616467652e737667) React Hooks Resource](https://github.com/rehooks/awesome-react-hooks)
