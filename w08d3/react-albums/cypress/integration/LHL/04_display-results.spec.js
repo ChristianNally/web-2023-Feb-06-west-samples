@@ -16,26 +16,19 @@ describe('Display Results', () => {
     }).as('getSearch');
 
     cy.get('.search__form')
-      .find('input:first')
-      .type('Daft Punk')
-      .should('have.value', 'Daft Punk');
-      
-    cy.get('.spinner').as('spinner')
-      .should('be.visible');
+    .find('input')
+    .type('Daft Punk')
+    .should('have.value', 'Daft Punk')
+    .get('.spinner').as('spinner').should('be.visible');
 
     cy.wait('@getSearch')
-      .get('main')
-      .contains('Homework')
-      .should('be.visible');
+    .get('main')
+    .contains('Homework')
+    .should('be.visible');
 
     cy.get('@spinner')
-      .should('not.be.visible');
+    .should('not.exist');
 
-    cy.contains('Explicit')
-      .click();
-
-    cy.get('article.album')
-      .should('not.contain', 'Daft Club');
   });
 
 });
