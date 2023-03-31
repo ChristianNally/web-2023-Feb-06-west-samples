@@ -12,3 +12,4 @@
 * [BREAKOUT - Express Router](/breakout-express-router)
 * [W07D05 - Custom Hooks](/w07d5)
 * [W08D01 - Bootcamp Review](/w08d1)
+* [W08D05 - Intro to Ruby](/w08d5)
