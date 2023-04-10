@@ -1,0 +1,9 @@
+<h1>All the characters</h1>
+
+<% @characters.each do |character| %>
+  <div class="character">
+    <h2>Name: <%= character.name %></h2>
+    <h2>House: <%= character.house %></h2>
+    <%= link_to "Quotes", character_quotes_path(character.id) %>
+  </div>
+<% end %>
