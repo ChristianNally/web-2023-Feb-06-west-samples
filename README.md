@@ -14,3 +14,4 @@
 * [W08D01 - Bootcamp Review](/w08d1)
 * [W08D05 - Intro to Ruby](/w08d5)
 * [W10D01 - Rails Review](/w10d1)
+* [ADVANCED - Intro to TypeScript](/w10d3)
